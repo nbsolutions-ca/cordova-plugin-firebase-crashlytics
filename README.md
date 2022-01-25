@@ -32,14 +32,17 @@ You must ensure that `google-services.json` is put in the correct location. This
 
 ```
 <platform name="android">
-    <resource-file src="google-services.json" target="google-services.json" />
+    <resource-file src="google-services.json" target="app/google-services.json" />
 </platform>
 ```
 
-#### Dependencies
-##### cordova-support-google-services
+Google Services must also be enabled via:
 
-In order to ensure Firebase initialises correctly on Android this plugin can be used. This is not automatically added as a dependency to allow for the configuration it performs to be done manually if desired.
+```
+<preference name="GradlePluginGoogleServicesEnabled" value="true" />
+```
+
+#### Dependencies
 
 ### iOS
 iOS requires `GoogleService-Info.plist` is put in the correct location. Similarly this can be done as follows:

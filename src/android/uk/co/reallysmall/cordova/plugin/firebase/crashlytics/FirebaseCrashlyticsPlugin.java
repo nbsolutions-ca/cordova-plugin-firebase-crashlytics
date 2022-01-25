@@ -5,6 +5,7 @@ package uk.co.reallysmall.cordova.plugin.firebase.crashlytics;
 import android.util.Log;
 
 import com.google.firebase.crashlytics.FirebaseCrashlytics;
+import com.google.firebase.FirebaseApp;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -37,6 +38,7 @@ public class FirebaseCrashlyticsPlugin extends CordovaPlugin {
         handlers.put("initialise", new InitialiseHandler());
 
         Log.d(TAG, "Initializing FBFirebaseCrashlyticsPlugin");
+        FirebaseApp.initializeApp(cordova.getContext());
     }
 
     public boolean execute(String action, JSONArray args, final CallbackContext callbackContext) throws JSONException {
